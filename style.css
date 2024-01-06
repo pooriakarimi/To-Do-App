@@ -1,0 +1,89 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+  font-family: "JakartaSans";
+}
+@font-face {
+  font-family: "JakartaSans";
+  src: url(/Assets/Fonts/PlusJakartaSans-VariableFont_wght.ttf);
+}
+:root {
+  --primaryColor: #272430;
+  --primaryColorLight: #3c1f7b;
+  --secondaryColor: #7e64ff;
+  --textColor: #fff;
+  --backgroundColor: linear-gradient(#383842, #251546, #0f091b, #000000);
+  --inputBcg: #ccc2fe;
+  --iconColor: #c68aff;
+  --highlightColor: #ff636c;
+}
+@media screen and (max-width: 375px) {
+  .welcome {
+    width: 100%;
+    max-width: 374.98px;
+    height: 71.2rem;
+    background-image: var(--backgroundColor);
+    color: var(--textColor);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
+  .welcome__title {
+    font-weight: bold;
+    font-size: 7.5rem;
+    margin: 100px 0 100px 0;
+  }
+  .welcome__description {
+    width: 100%;
+    max-width: 230px;
+    font-size: 3.5rem;
+    margin: 0 0 150px 0;
+  }
+  .welcome__button {
+    width: 297px;
+    height: 55px;
+    font-size: 2.4rem;
+    font-weight: 700;
+    border-radius: 12px;
+    color: var(--primaryColor);
+    background-color: var(--textColor);
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 430px) {
+  .welcome {
+    width: 100%;
+    max-width: 429.98px;
+    height: 74.6rem;
+    background-image: var(--backgroundColor);
+    color: var(--textColor);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
+  .welcome__title {
+    font-weight: bold;
+    font-size: 7.5rem;
+    margin: 100px 0 100px 0;
+  }
+  .welcome__description {
+    width: 100%;
+    max-width: 230px;
+    font-size: 3.5rem;
+    margin: 0 0 150px 0;
+  }
+  .welcome__button {
+    width: 317px;
+    height: 60px;
+    font-size: 2.4rem;
+    font-weight: 700;
+    border-radius: 12px;
+    color: var(--primaryColor);
+    background-color: var(--textColor);
+  }
+}
