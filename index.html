@@ -6,19 +6,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List Web App</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
 <body>
-    <main class="welcome">
+    <section class="welcome">
         <h1 class="welcome__title">On Time</h1>
-        <p class="welcome__description">Make yourself more on time</p>
-        <a href="http://"><button class="welcome__button">START</button></a>
-    </main>
+    </section>
+    <section class="startMenu">
+        <h1 class="startMenu__title">On Time</h1>
+        <p class="startMenu__description">Make yourself more on time</p>
+        <button class="startMenu__button">START</button>
+    </section>
+    <section class="todoList">
+        <section class="todoList__header">
+            <h2 class="todoList__title">On Time</h2>
+            <select class="todoList__sort" name="sort">
+                <option value="all">All</option>
+                <option value="completed">Done</option>
+                <option value="uncompleted">Not Done Yet</option>
+            </select>
+            <i class="fa-solid fa-ellipsis-vertical todoList--icons"></i>
+        </section>
+        <input class="todoList__search" type="text" name="search" id="search" placeholder="Search Notes">
+        <div class="editTask__mode">
+            <!-- <div class="backdrop"></div>
+        <div class="editTask__modal">
+            <form id="editTask" action="" method="post" class="editTaskForm">
+                <input type="text" class="taskTitle__edit" value="" placeholder="Title">
+                <input type="text" class="taskInput__edit" value="" placeholder="Task">
+                <button class="editedTask__submit" type="submit" form="editTask">Save</button>
+            </form>
+        </div> -->
+        </div>
+        <ul class="todoList__list">
+            <!-- <li class="todoList__item">
+                <h3 class="item__title"></h3>
+                <p class="item__description"></p>
+                <p class="item__date"></p>
+                <div class="todoList__buttonBox">
+                    <button class="todoList__check">
+                        <i class="fa-solid fa-check-to-slot"></i>
+                    </button>
+                    <button class="todoList__remove">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                    <button class="todoList__edit">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                </div>
+            </li> -->
+        </ul>
+        <div class="newItemBtn__buttonBox">
+            <button class="newItemBtn"><i class="fa-solid fa-plus"></i></button>
+        </div>
+    </section>
+    <section class="newTask">
+        <section class="newTask__header">
+            <button class="newTask__submit" type="submit" form="newTask">
+                <i class="fa-solid fa-arrow-left-long"></i>
+            </button>
+            <i class="fa-solid fa-thumbtack todoList--icons"></i>
+            <i class="fa-solid fa-ellipsis-vertical todoList--icons"></i>
+        </section>
+        <form id="newTask" action="" method="post" class="newTaskForm">
+            <input type="text" class="newTask__title" placeholder="Title">
+            <input type="text" class="newTask__input" placeholder="Task">
+        </form>
+
+    </section>
 </body>
+<script src="index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js"
+    integrity="sha512-2bMhOkE/ACz21dJT8zBOMgMecNxx0d37NND803ExktKiKdSzdwn+L7i9fdccw/3V06gM/DBWKbYmQvKMdAA9Nw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
 </html>

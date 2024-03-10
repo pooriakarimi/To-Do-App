@@ -6,6 +6,7 @@
   padding: 0;
   font-size: 62.5%;
   font-family: "JakartaSans";
+  overflow-x: hidden;
 }
 @font-face {
   font-family: "JakartaSans";
@@ -19,71 +20,3141 @@
   --backgroundColor: linear-gradient(#383842, #251546, #0f091b, #000000);
   --inputBcg: #ccc2fe;
   --iconColor: #c68aff;
-  --highlightColor: #ff636c;
+  --highlightColor: #ff3142;
 }
 @media screen and (max-width: 375px) {
+  body {
+    background-image: var(--backgroundColor);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 71.5rem;
+    max-width: 375px;
+  }
   .welcome {
     width: 100%;
     max-width: 374.98px;
-    height: 71.2rem;
-    background-image: var(--backgroundColor);
-    color: var(--textColor);
+    height: 100vh;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .welcome__title {
+    width: 260px;
+    height: auto;
+    font-weight: bold;
+    font-size: 6.5rem;
+    margin: 85% 20%;
+    color: var(--textColor);
+    animation: fadeIn 2s linear;
+  }
+  .startMenu__title {
     font-weight: bold;
     font-size: 7.5rem;
     margin: 100px 0 100px 0;
   }
-  .welcome__description {
+  .startMenu {
+    width: 100%;
+    max-width: 374.98px;
+    height: 100vh;
+    color: var(--textColor);
+    display: none;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeIn 2s linear;
+  }
+  .startMenu__description {
     width: 100%;
     max-width: 230px;
     font-size: 3.5rem;
     margin: 0 0 150px 0;
   }
-  .welcome__button {
-    width: 297px;
+  .startMenu__button {
+    width: 317px;
     height: 55px;
     font-size: 2.4rem;
     font-weight: 700;
     border-radius: 12px;
+    border: none;
     color: var(--primaryColor);
     background-color: var(--textColor);
   }
-}
-@media screen and (min-width: 376px) and (max-width: 430px) {
-  .welcome {
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 25%;
+    }
+    50% {
+      opacity: 50%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+  @keyframes fadeOut {
+    0% {
+      opacity: 100%;
+    }
+    25% {
+      opacity: 75%;
+    }
+    50% {
+      opacity: 50%;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .todoList {
     width: 100%;
-    max-width: 429.98px;
-    height: 74.6rem;
-    background-image: var(--backgroundColor);
+    max-width: 374.98px;
+    /* height: auto; */
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     color: var(--textColor);
+    margin: 10px 0;
+    animation: fadeIn 2s linear;
+  }
+  .todoList__header {
+    width: 90%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--textColor);
+    font-size: 5rem;
+    margin: 25px 0;
+  }
+  .todoList__title {
+    font-size: 3rem;
+  }
+  .todoList__sort {
+    width: 100%;
+    max-width: 150px;
+    background-color: var(--inputBcg);
+    color: var(--primaryColor);
+    border: none;
+    border-radius: 20px;
+    appearance: none;
+    cursor: pointer;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0 0 0 auto;
+  }
+
+  .todoList__sort option {
+    background-color: var(--inputBcg);
+    color: var(--primaryColor);
+    width: 100px;
+    height: 70px;
+    border-radius: 20px;
+    font-size: 1.3rem;
+  }
+
+  .todoList__sort option:hover {
+    background-color: var(--iconColor);
+  }
+
+  .todoList__sort:focus,
+  .todoList__sort:active {
+    outline: 0;
+  }
+
+  .fa-ellipsis-vertical {
+    margin: 0 10px 0 auto;
+  }
+  .todoList__search {
+    width: 95%;
+    max-width: 346px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--inputBcg);
+    margin: 30px 0 30px 0;
+    padding: 0 0 0 10px;
+    font-size: 2rem;
+    color: var(--primaryColor);
+  }
+  .todoList__search::placeholder {
+    font-size: 2rem;
+    color: var(--primaryColor);
+    outline: 0;
+    transition: all 0.5s;
+    padding: 0 0 0 15px;
+  }
+  .todoList__search:active {
+    outline: 0;
+    border: 1px solid var(--textSecondaryColor);
+    box-shadow: 1px var(--textSecondaryColor);
+    transition: all 0.5s;
+    padding: 0 0 0 10px;
+  }
+  .todoList__search:focus {
+    outline: 0;
+    border: 1px solid var(--textSecondaryColor);
+    box-shadow: 1px var(--textSecondaryColor);
+    transition: all 0.5s;
+    padding: 0 0 0 10px;
+  }
+  .todoList__list {
+    width: 340px;
+    height: auto;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+    /* overflow-y: scroll; */
+  }
+  .todoList__item {
+    width: 95%;
+    max-width: 340px;
+    height: 100%;
+    min-height: 100px;
+    max-height: 110px;
+    margin: 7px 0;
+    background-color: var(--secondaryColor);
+    border-radius: 8px;
+    color: var(--textColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .item__title {
+    width: 300px;
+    height: 40px;
+    font-size: 1.7rem;
+    font-weight: 300;
+    margin: 7px 0 0px 7px;
+  }
+  .item__description {
+    width: 340px;
+    height: 48px;
+    font-size: 1.5rem;
+    margin: 0px 0 0px 7px;
+  }
+  .item__date {
+    width: 120px;
+    height: 20px;
+    font-size: 1.1rem;
+    margin: auto 0 -30px 10px;
+    font-weight: 200;
+  }
+  .todoList__buttonBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 35px;
+    margin: auto -1rem 5px auto;
+  }
+  .todoList__check {
+    width: 30px;
+    height: 30px;
+    font-size: 2.8rem;
+    color: var(--textColor);
+    background-color: var(--secondaryColor);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin: 0 25px 0 0;
+    cursor: pointer;
+    order: 2;
+  }
+  .todoList__remove {
+    width: 20px;
+    height: 20px;
+    font-size: 2.8rem;
+    background-color: var(--secondaryColor);
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--highlightColor);
+    margin: 0 30px 0 0;
+    cursor: pointer;
+    order: 3;
+  }
+  .todoList__edit {
+    width: 30px;
+    height: 30px;
+    font-size: 3.8rem;
+    color: var(--textColor);
+    background-color: var(--secondaryColor);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin: 0 20px 0 0;
+    cursor: pointer;
+    order: 1;
+  }
+  .newItemBtn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--secondaryColor);
+    font-size: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--textColor);
+  }
+  .newItemBtn__buttonBox {
+    width: 60px;
+    height: 60px;
+    margin: 2rem 2rem auto auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .newTask {
+    width: 100%;
+    max-width: 374.98px;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--secondaryColor);
+    animation: fadeIn 0.7s linear;
+  }
+  .newTask__header {
+    width: 100%;
+    max-width: 370px;
+    height: 60px;
+    margin: 10px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--textColor);
+    font-size: 4.1rem;
+  }
+  .newTask__submit {
+    width: 45px;
+    height: 45px;
+    font-size: 4.1rem;
+    background-color: var(--secondaryColor);
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: var(--textColor);
+    align-items: center;
+  }
+  .newTask__title {
+    font-size: 2rem;
+    width: 300px;
+    height: 50px;
+    margin: 0 auto 0 0;
+    padding: 0 0 0 10px;
+    color: var(--textColor);
+    background-color: var(--secondaryColor);
+    border: none;
+    text-align: start;
+    line-height: 0;
+    overflow: hidden;
+  }
+  .newTask__title::placeholder,
+  .newTask__input::placeholder {
+    font-size: 2rem;
+    color: var(--textColor);
+    margin: 0 0 0 10px;
+    opacity: 0.7;
+  }
+  .newTask__title:focus,
+  .newTask__title:active {
+    outline: 0;
+    font-size: 2rem;
+    border: none;
+    margin: 0 0 0 0;
+    padding: 0 0 0 10px;
+    overflow-wrap: break-word;
+    white-space: break-space;
+  }
+  .newTask__input {
+    background-color: var(--secondaryColor);
+    border: none;
+    width: 340px;
+    font-size: 2rem;
+    padding: 0 20rem 50rem 10px;
+    color: var(--textColor);
+    text-align: start;
+    line-height: 0;
+    overflow: hidden;
+  }
+  .newTask__input:focus,
+  .newTask__input:active {
+    outline: 0;
+    font-size: 2rem;
+    border: none;
+    padding: 0 0 0 10px;
+    overflow-wrap: break-word;
+    white-space: break-space;
+  }
+  .fa-thumbtack {
+    margin: 0 -18rem 0 auto;
+  }
+  .fa-trash,
+  .fa-check-to-slot {
+    pointer-events: none;
+  }
+  .completed {
+    text-decoration: line-through 2px var(--primaryColor);
+    opacity: 0.5;
+  }
+  .item--buttons {
+    pointer-events: none;
+    width: 20px;
+    height: 20px;
+  }
+  .backdrop {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    backdrop-filter: blur(3px);
+  }
+  .editTask__mode {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 9;
+  }
+  .editTask__modal {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    padding: 1rem;
+    width: 70%;
+    max-width: 50rem;
+    height: 20rem;
+    border: none;
+    background-color: var(--iconColor);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 2rem;
+    top: 50vh;
+    left: 0.5rem;
+    transform: translate(20%, -20%);
+    z-index: 20;
+    animation: comeUpModal 1s linear;
+  }
+  @keyframes comeUpModal {
+    0% {
+      transform: translateX(60%) scale(0.8);
+    }
+  }
+  .editTaskForm {
+    width: 100%;
+    max-width: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .taskTitle__edit {
+    width: 100%;
+    max-width: 50rem;
+    font-size: 2.5rem;
+    color: var(--textColor);
+    background-color: var(--iconColor);
+    border: none;
+  }
+  .taskInput__edit {
+    width: 100%;
+    max-width: 50rem;
+    padding: 0 0 10rem 2px;
+    font-size: 2.3rem;
+    color: var(--textColor);
+    background-color: var(--iconColor);
+    border: none;
+  }
+
+  .taskTitle__edit:focus,
+  .taskTitle__edit:active,
+  .taskInput__edit:focus,
+  .taskInput__edit:active {
+    outline: none;
+  }
+  .taskTitle__edit::placeholder,
+  .taskInput__edit::placeholder {
+    color: var(--textColor);
+    opacity: 0.5;
+  }
+  .editedTask__submit {
+    width: 100%;
+    max-width: 7rem;
+    height: 3rem;
+    margin: auto 0.5rem 0 auto;
+    border: none;
+    border-radius: 2rem;
+    background-color: var(--primaryColorLight);
+    color: var(--textColor);
+    font-size: 1.3rem;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 480px) {
+  body {
+    background-image: var(--backgroundColor);
+    width: 100%;
+    max-width: 480px;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .welcome {
+    width: 100%;
+    max-width: 480px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .welcome__title {
+    width: 260px;
+    height: auto;
+    font-weight: bold;
+    font-size: 6.5rem;
+    color: var(--textColor);
+    animation: fadeIn 2s linear;
+  }
+  .startMenu {
+    width: 100%;
+    max-width: 429.98px;
+    height: 100vh;
+    color: var(--textColor);
+    display: none;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeIn 2s linear;
+  }
+  .startMenu__title {
     font-weight: bold;
     font-size: 7.5rem;
     margin: 100px 0 100px 0;
   }
-  .welcome__description {
+  .startMenu__description {
     width: 100%;
     max-width: 230px;
     font-size: 3.5rem;
     margin: 0 0 150px 0;
   }
-  .welcome__button {
+  .startMenu__button {
     width: 317px;
-    height: 60px;
+    height: 55px;
     font-size: 2.4rem;
     font-weight: 700;
     border-radius: 12px;
+    border: none;
     color: var(--primaryColor);
     background-color: var(--textColor);
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 25%;
+    }
+    50% {
+      opacity: 50%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+  @keyframes fadeOut {
+    0% {
+      opacity: 100%;
+    }
+    25% {
+      opacity: 75%;
+    }
+    50% {
+      opacity: 50%;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .todoList {
+    width: 100%;
+    max-width: 429.98px;
+    height: auto;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--textColor);
+    margin: 10px 0;
+    animation: fadeIn 2s linear;
+  }
+  .todoList__header {
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--textColor);
+    font-size: 5rem;
+    margin: 25px 0;
+  }
+  .todoList__title {
+    font-size: 3rem;
+  }
+  .todoList__sort {
+    width: 100%;
+    max-width: 150px;
+    background-color: var(--inputBcg);
+    color: var(--primaryColor);
+    border: none;
+    border-radius: 20px;
+    appearance: none;
+    cursor: pointer;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0 0 0 auto;
+  }
+
+  .todoList__sort option {
+    background-color: var(--inputBcg);
+    color: var(--primaryColor);
+    width: 100px;
+    height: 70px;
+    border-radius: 20px;
+    font-size: 1.3rem;
+  }
+
+  .todoList__sort option:hover {
+    background-color: var(--iconColor);
+  }
+
+  .todoList__sort:focus,
+  .todoList__sort:active {
+    outline: 0;
+  }
+
+  .fa-ellipsis-vertical {
+    margin: 0 10px 0 auto;
+  }
+  .todoList__search {
+    width: 100%;
+    max-width: 346px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--inputBcg);
+    margin: 30px 0 30px 0;
+    padding: 0 0 0 10px;
+    font-size: 2rem;
+    color: var(--primaryColor);
+  }
+  .todoList__search::placeholder {
+    font-size: 2rem;
+    color: var(--primaryColor);
+    outline: 0;
+    transition: all 0.5s;
+    padding: 0 0 0 15px;
+  }
+  .todoList__search:active {
+    outline: 0;
+    border: 1px solid var(--textSecondaryColor);
+    box-shadow: 1px var(--textSecondaryColor);
+    transition: all 0.5s;
+    padding: 0 0 0 10px;
+  }
+  .todoList__search:focus {
+    outline: 0;
+    border: 1px solid var(--textSecondaryColor);
+    box-shadow: 1px var(--textSecondaryColor);
+    transition: all 0.5s;
+    padding: 0 0 0 10px;
+  }
+  .todoList__list {
+    width: 370px;
+    max-height: 65rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
+  .todoList__item {
+    width: 100%;
+    max-width: 360px;
+    height: 100%;
+    min-height: 100px;
+    max-height: 110px;
+    margin: 7px 0;
+    background-color: var(--secondaryColor);
+    border-radius: 8px;
+    color: var(--textColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .item__title {
+    width: 300px;
+    height: 40px;
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 7px 0 0px 7px;
+  }
+  .item__description {
+    width: 340px;
+    height: 48px;
+    font-size: 2rem;
+    margin: 0px 0 0px 7px;
+  }
+  .item__date {
+    width: 120px;
+    height: 20px;
+    font-size: 1.5rem;
+    margin: auto 0 -30px 10px;
+    font-weight: 200;
+  }
+  .todoList__buttonBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 35px;
+    margin: auto -1rem 5px auto;
+  }
+  .todoList__check {
+    width: 30px;
+    height: 30px;
+    font-size: 2.8rem;
+    color: var(--textColor);
+    background-color: var(--secondaryColor);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin: 0 25px 0 0;
+    cursor: pointer;
+    order: 2;
+  }
+  .todoList__remove {
+    width: 20px;
+    height: 20px;
+    font-size: 2.8rem;
+    background-color: var(--secondaryColor);
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--highlightColor);
+    margin: 0 30px 0 0;
+    cursor: pointer;
+    order: 3;
+  }
+  .todoList__edit {
+    width: 30px;
+    height: 30px;
+    font-size: 3.8rem;
+    color: var(--textColor);
+    background-color: var(--secondaryColor);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin: 0 20px 0 0;
+    cursor: pointer;
+    order: 1;
+  }
+  .newItemBtn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--secondaryColor);
+    font-size: 4.6rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--textColor);
+  }
+  .newItemBtn__buttonBox {
+    width: 60px;
+    height: 60px;
+    margin: 20px 30px auto auto;
+  }
+  .newTask {
+    width: 100%;
+    max-width: 429.98px;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--secondaryColor);
+    animation: fadeIn 0.7s linear;
+  }
+  .newTask__header {
+    width: 100%;
+    max-width: 400px;
+    height: 60px;
+    margin: 10px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--textColor);
+    font-size: 4.1rem;
+  }
+  .newTask__submit {
+    width: 45px;
+    height: 45px;
+    font-size: 4.5rem;
+    background-color: var(--secondaryColor);
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: var(--textColor);
+    align-items: center;
+  }
+  .newTask__title {
+    font-size: 2.5rem;
+    width: 300px;
+    height: 50px;
+    padding: 0 20rem 0 15px;
+    color: var(--textColor);
+    background-color: var(--secondaryColor);
+    border: none;
+    text-align: start;
+    line-height: 0;
+    overflow: hidden;
+  }
+  .newTask__title::placeholder,
+  .newTask__input::placeholder {
+    font-size: 2rem;
+    color: var(--textColor);
+    margin: 0 0 0 10px;
+    opacity: 0.7;
+  }
+  .newTask__title:focus,
+  .newTask__title:active {
+    outline: 0;
+    font-size: 2.5rem;
+    border: none;
+    padding: 0 0 0 15px;
+    overflow-wrap: break-word;
+    white-space: break-space;
+  }
+  .newTask__input {
+    background-color: var(--secondaryColor);
+    border: none;
+    width: 375px;
+    font-size: 2.5rem;
+    padding: 0 0 51rem 15px;
+    color: var(--textColor);
+    text-align: start;
+    line-height: 0;
+    overflow: hidden;
+  }
+  .newTask__input:focus,
+  .newTask__input:active {
+    outline: 0;
+    font-size: 2.5rem;
+    border: none;
+    padding: 0 0 0 15px;
+    overflow-wrap: break-word;
+    white-space: break-space;
+  }
+  .newTask__input::-ms-value {
+    margin: 0 0 auto 0;
+    color: red;
+  }
+
+  .fa-thumbtack {
+    margin: 0 -18rem 0 auto;
+  }
+
+  .fa-trash,
+  .fa-check-to-slot {
+    pointer-events: none;
+  }
+  .completed {
+    text-decoration: line-through 2px var(--primaryColor);
+    opacity: 0.5;
+  }
+  .item--buttons {
+    pointer-events: none;
+    width: 20px;
+    height: 20px;
+  }
+  .backdrop {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    backdrop-filter: blur(3px);
+  }
+  .editTask__mode {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 9;
+  }
+  .editTask__modal {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    padding: 1rem;
+    width: 70%;
+    max-width: 50rem;
+    height: 20rem;
+    border: none;
+    background-color: var(--iconColor);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 2rem;
+    top: 50vh;
+    left: 0.5rem;
+    transform: translate(20%, -20%);
+    z-index: 20;
+    animation: comeUpModal 1s linear;
+  }
+  @keyframes comeUpModal {
+    0% {
+      transform: translateX(60%) scale(0.8);
+    }
+  }
+  .editTaskForm {
+    width: 100%;
+    max-width: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .taskTitle__edit {
+    width: 100%;
+    max-width: 50rem;
+    font-size: 2.5rem;
+    color: var(--textColor);
+    background-color: var(--iconColor);
+    border: none;
+  }
+  .taskInput__edit {
+    width: 100%;
+    max-width: 50rem;
+    padding: 0 0 10rem 2px;
+    font-size: 2.3rem;
+    color: var(--textColor);
+    background-color: var(--iconColor);
+    border: none;
+  }
+
+  .taskTitle__edit:focus,
+  .taskTitle__edit:active,
+  .taskInput__edit:focus,
+  .taskInput__edit:active {
+    outline: none;
+  }
+  .taskTitle__edit::placeholder,
+  .taskInput__edit::placeholder {
+    color: var(--textColor);
+    opacity: 0.5;
+  }
+  .editedTask__submit {
+    width: 100%;
+    max-width: 7rem;
+    height: 3rem;
+    margin: auto 0.5rem 0 auto;
+    border: none;
+    border-radius: 2rem;
+    background-color: var(--primaryColorLight);
+    color: var(--textColor);
+    font-size: 1.3rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 720px) {
+  body {
+    background-image: var(--backgroundColor);
+    width: 100%;
+    max-width: 720px;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .welcome {
+    width: 100%;
+    max-width: 719.98px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .welcome__title {
+    width: 260px;
+    height: auto;
+    font-weight: bold;
+    font-size: 6.5rem;
+    color: var(--textColor);
+    animation: fadeIn 2s linear;
+  }
+  .startMenu {
+    width: 100%;
+    max-width: 719.98px;
+    height: 100vh;
+    color: var(--textColor);
+    display: none;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeIn 2s linear;
+  }
+  .startMenu__title {
+    font-weight: bold;
+    font-size: 7.5rem;
+    margin: 100px 0 100px 0;
+  }
+  .startMenu__description {
+    width: 100%;
+    max-width: 250px;
+    font-size: 3.5rem;
+    margin: 0 0 150px 0;
+  }
+  .startMenu__button {
+    width: 317px;
+    height: 55px;
+    font-size: 2.4rem;
+    font-weight: 700;
+    border-radius: 12px;
+    border: none;
+    color: var(--primaryColor);
+    background-color: var(--textColor);
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 25%;
+    }
+    50% {
+      opacity: 50%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+  @keyframes fadeOut {
+    0% {
+      opacity: 100%;
+    }
+    25% {
+      opacity: 75%;
+    }
+    50% {
+      opacity: 50%;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .todoList {
+    width: 100%;
+    max-width: 719.98px;
+    height: auto;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--textColor);
+    margin: 10px 0;
+    animation: fadeIn 2s linear;
+  }
+  .todoList__header {
+    width: 100%;
+    max-width: 650px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--textColor);
+    font-size: 5rem;
+    margin: 25px 0;
+  }
+  .todoList__title {
+    font-size: 3.5rem;
+  }
+  .todoList__sort {
+    width: 100%;
+    max-width: 220px;
+    height: 40px;
+    background-color: var(--inputBcg);
+    color: var(--primaryColor);
+    border: none;
+    border-radius: 20px;
+    appearance: none;
+    cursor: pointer;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0 0 0 auto;
+  }
+
+  .todoList__sort option {
+    background-color: var(--inputBcg);
+    color: var(--primaryColor);
+    width: 100px;
+    height: 70px;
+    border-radius: 20px;
+    font-size: 1.3rem;
+  }
+
+  .todoList__sort option:hover {
+    background-color: var(--iconColor);
+  }
+
+  .todoList__sort:focus,
+  .todoList__sort:active {
+    outline: 0;
+  }
+
+  .fa-ellipsis-vertical {
+    margin: 0 10px 0 auto;
+  }
+  .todoList__search {
+    width: 95%;
+    max-width: 646px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--inputBcg);
+    margin: 30px 0 30px 0;
+    padding: 0 0 0 10px;
+    font-size: 2rem;
+    color: var(--primaryColor);
+  }
+  .todoList__search::placeholder {
+    font-size: 2rem;
+    color: var(--primaryColor);
+    outline: 0;
+    transition: all 0.5s;
+    padding: 0 0 0 15px;
+  }
+  .todoList__search:active {
+    outline: 0;
+    border: 1px solid var(--textSecondaryColor);
+    box-shadow: 1px var(--textSecondaryColor);
+    transition: all 0.5s;
+    padding: 0 0 0 10px;
+  }
+  .todoList__search:focus {
+    outline: 0;
+    border: 1px solid var(--textSecondaryColor);
+    box-shadow: 1px var(--textSecondaryColor);
+    transition: all 0.5s;
+    padding: 0 0 0 10px;
+  }
+  .todoList__list {
+    width: 100%;
+    max-width: 660px;
+    max-height: 65rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
+  .todoList__item {
+    width: 95%;
+    max-width: 640px;
+    height: 100%;
+    min-height: 120px;
+    max-height: 140px;
+    margin: 7px 0;
+    background-color: var(--secondaryColor);
+    border-radius: 8px;
+    color: var(--textColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .item__title {
+    width: 300px;
+    height: 40px;
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 7px 0 0px 7px;
+  }
+  .item__description {
+    width: 340px;
+    height: 48px;
+    font-size: 1.8rem;
+    margin: 0px 0 0px 7px;
+  }
+  .item__date {
+    width: 120px;
+    height: 20px;
+    font-size: 1.3rem;
+    margin: auto 0 -30px 10px;
+    font-weight: 200;
+  }
+  .todoList__buttonBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 35px;
+    margin: auto -4rem 5px auto;
+  }
+  .todoList__check {
+    width: 30px;
+    height: 30px;
+    font-size: 2.8rem;
+    color: var(--textColor);
+    background-color: var(--secondaryColor);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin: 0 25px 0 0;
+    cursor: pointer;
+    order: 3;
+  }
+  .todoList__remove {
+    width: 30px;
+    height: 30px;
+    font-size: 2.8rem;
+    background-color: var(--secondaryColor);
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--highlightColor);
+    margin: 0 30px 0 0;
+    cursor: pointer;
+    order: 3;
+  }
+  .todoList__edit {
+    width: 30px;
+    height: 30px;
+    font-size: 3.8rem;
+    color: var(--textColor);
+    background-color: var(--secondaryColor);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin: 0 30px 0 0;
+    cursor: pointer;
+    order: 1;
+  }
+  .newItemBtn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--secondaryColor);
+    font-size: 4.6rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--textColor);
+  }
+  .newItemBtn__buttonBox {
+    width: 60px;
+    height: 60px;
+    margin: 2rem 30px auto auto;
+  }
+  .newTask {
+    width: 100%;
+    max-width: 719.98px;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--secondaryColor);
+    animation: fadeIn 0.7s linear;
+  }
+  .newTask__header {
+    width: 95%;
+    max-width: 670px;
+    height: 60px;
+    margin: 10px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--textColor);
+    font-size: 4.1rem;
+  }
+  .newTask__submit {
+    width: 45px;
+    height: 45px;
+    font-size: 4.1rem;
+    background-color: var(--secondaryColor);
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: var(--textColor);
+    align-items: center;
+  }
+  .newTask__title {
+    cursor: pointer;
+    font-size: 2rem;
+    width: 100%;
+    max-width: 640px;
+    height: 50px;
+    margin: 0 auto 0 0px;
+    padding: 0 0 0 15px;
+    color: var(--textColor);
+    background-color: var(--secondaryColor);
+    border: none;
+    text-align: start;
+    line-height: 0;
+    overflow: hidden;
+  }
+  .newTask__title::placeholder,
+  .newTask__input::placeholder {
+    font-size: 2rem;
+    color: var(--textColor);
+    margin: 0 0 0 10px;
+    opacity: 0.7;
+  }
+  .newTask__title:focus,
+  .newTask__title:active {
+    outline: 0;
+    font-size: 2rem;
+    border: none;
+    padding: 0 0 0 15px;
+    overflow-wrap: break-word;
+    white-space: break-space;
+  }
+  .newTask__input {
+    background-color: var(--secondaryColor);
+    border: none;
+    width: 640px;
+    font-size: 2rem;
+    padding: 0 0 34rem 15px;
+    color: var(--textColor);
+    text-align: start;
+    line-height: 0;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .newTask__input:focus,
+  .newTask__input:active {
+    outline: 0;
+    font-size: 2rem;
+    border: none;
+    margin: 0px 0 0 0;
+    padding: 0 0 34rem 15px;
+    overflow-wrap: break-word;
+    white-space: break-space;
+  }
+  .newTask__input::-ms-value {
+    margin: 0 0 auto 0;
+    color: red;
+  }
+  .newTaskForm {
+    width: 100%;
+    max-width: 700px;
+    background-color: var(--secondaryColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .fa-thumbtack {
+    margin: 0 -25rem 0 auto;
+  }
+  .fa-trash,
+  .fa-check-to-slot {
+    pointer-events: none;
+  }
+  .completed {
+    text-decoration: line-through 2px var(--primaryColor);
+    opacity: 0.5;
+  }
+  .item--buttons {
+    pointer-events: none;
+    width: 20px;
+    height: 20px;
+  }
+  .backdrop {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    backdrop-filter: blur(3px);
+  }
+  .editTask__modal {
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: absolute;
+    padding: 1rem;
+    width: 70%;
+    max-width: 50rem;
+    height: 20rem;
+    border: none;
+    background-color: var(--iconColor);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 2rem;
+    top: 50%;
+    left: 25%;
+    transform: translate(20%, -20%);
+    z-index: 20;
+    animation: comeUpModal 1s linear;
+  }
+  @keyframes comeUpModal {
+    0% {
+      transform: translateX(60%) scale(0.8);
+    }
+  }
+  .editTaskForm {
+    width: 100%;
+    max-width: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .taskTitle__edit {
+    width: 100%;
+    max-width: 50rem;
+    font-size: 2.5rem;
+    color: var(--textColor);
+    background-color: var(--iconColor);
+    border: none;
+  }
+  .taskInput__edit {
+    width: 100%;
+    max-width: 50rem;
+    padding: 0 0 10rem 2px;
+    font-size: 2.3rem;
+    color: var(--textColor);
+    background-color: var(--iconColor);
+    border: none;
+  }
+
+  .taskTitle__edit:focus,
+  .taskTitle__edit:active,
+  .taskInput__edit:focus,
+  .taskInput__edit:active {
+    outline: none;
+  }
+  .taskTitle__edit::placeholder,
+  .taskInput__edit::placeholder {
+    color: var(--textColor);
+    opacity: 0.5;
+  }
+  .editedTask__submit {
+    width: 100%;
+    max-width: 7rem;
+    height: 3rem;
+    margin: auto 0.5rem 0 auto;
+    border: none;
+    border-radius: 2rem;
+    background-color: var(--primaryColorLight);
+    color: var(--textColor);
+    font-size: 1.3rem;
+  }
+  .item--buttons {
+    pointer-events: none;
+  }
+  .backdrop {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    backdrop-filter: blur(3px);
+  }
+  .editTask__mode {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 9;
+  }
+  .editTask__modal {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    padding: 1rem;
+    width: 70%;
+    max-width: 50rem;
+    height: 20rem;
+    border: none;
+    background-color: var(--iconColor);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 2rem;
+    top: 50vh;
+    left: 1rem;
+    transform: translate(20%, -20%);
+    z-index: 20;
+    animation: comeUpModal 1s linear;
+  }
+  @keyframes comeUpModal {
+    0% {
+      transform: translateX(60%) scale(0.8);
+    }
+  }
+  .editTaskForm {
+    width: 100%;
+    max-width: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .taskTitle__edit {
+    width: 100%;
+    max-width: 50rem;
+    font-size: 2.5rem;
+    color: var(--textColor);
+    background-color: var(--iconColor);
+    border: none;
+  }
+  .taskInput__edit {
+    width: 100%;
+    max-width: 50rem;
+    padding: 0 0 10rem 2px;
+    font-size: 2.3rem;
+    color: var(--textColor);
+    background-color: var(--iconColor);
+    border: none;
+  }
+
+  .taskTitle__edit:focus,
+  .taskTitle__edit:active,
+  .taskInput__edit:focus,
+  .taskInput__edit:active {
+    outline: none;
+  }
+  .taskTitle__edit::placeholder,
+  .taskInput__edit::placeholder {
+    color: var(--textColor);
+    opacity: 0.5;
+  }
+  .editedTask__submit {
+    width: 100%;
+    max-width: 7rem;
+    height: 3rem;
+    margin: auto 0.5rem 0 auto;
+    border: none;
+    border-radius: 2rem;
+    background-color: var(--primaryColorLight);
+    color: var(--textColor);
+    font-size: 1.3rem;
+  }
+}
+@media screen and (min-width: 721px) and (max-width: 1024px) {
+  body {
+    background-image: var(--backgroundColor);
+    width: 100%;
+    max-width: 1024px;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .welcome {
+    width: 100%;
+    max-width: 1023.98px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .welcome__title {
+    width: 260px;
+    height: auto;
+    font-weight: bold;
+    font-size: 6.5rem;
+    color: var(--textColor);
+    animation: fadeIn 2s linear;
+  }
+  .startMenu {
+    width: 100%;
+    max-width: 1023.98px;
+    height: 100vh;
+    color: var(--textColor);
+    display: none;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeIn 2s linear;
+  }
+  .startMenu__title {
+    font-weight: bold;
+    font-size: 8.5rem;
+    margin: 100px 0 100px 0;
+  }
+  .startMenu__description {
+    width: 100%;
+    max-width: 590px;
+    font-size: 4.5rem;
+    margin: 0 0 150px 0;
+  }
+  .startMenu__button {
+    width: 317px;
+    height: 55px;
+    font-size: 2.4rem;
+    font-weight: 700;
+    border-radius: 12px;
+    border: none;
+    color: var(--primaryColor);
+    background-color: var(--textColor);
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 25%;
+    }
+    50% {
+      opacity: 50%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+  @keyframes fadeOut {
+    0% {
+      opacity: 100%;
+    }
+    25% {
+      opacity: 75%;
+    }
+    50% {
+      opacity: 50%;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .todoList {
+    width: 100%;
+    max-width: 1023.98px;
+    height: auto;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--textColor);
+    margin: 10px 0;
+    animation: fadeIn 2s linear;
+  }
+  .todoList__header {
+    width: 95%;
+    max-width: 850px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--textColor);
+    font-size: 5rem;
+    margin: 25px 0;
+  }
+  .todoList__title {
+    font-size: 3.5rem;
+  }
+  .todoList__sort {
+    width: 100%;
+    max-width: 420px;
+    height: 40px;
+    background-color: var(--inputBcg);
+    color: var(--primaryColor);
+    border: none;
+    border-radius: 20px;
+    appearance: none;
+    cursor: pointer;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0 0 0 auto;
+  }
+
+  .todoList__sort option {
+    background-color: var(--inputBcg);
+    color: var(--primaryColor);
+    width: 100px;
+    height: 70px;
+    border-radius: 20px;
+    font-size: 1.3rem;
+  }
+
+  .todoList__sort option:hover {
+    background-color: var(--iconColor);
+  }
+
+  .todoList__sort:focus,
+  .todoList__sort:active {
+    outline: 0;
+  }
+
+  .fa-ellipsis-vertical {
+    margin: 0 10px 0 auto;
+  }
+  .todoList__search {
+    width: 95%;
+    max-width: 840px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--inputBcg);
+    margin: 30px 0 30px 0;
+    padding: 0 0 0 10px;
+    font-size: 2rem;
+    color: var(--primaryColor);
+  }
+  .todoList__search::placeholder {
+    font-size: 2rem;
+    color: var(--primaryColor);
+    outline: 0;
+    transition: all 0.5s;
+    padding: 0 0 0 15px;
+  }
+  .todoList__search:active {
+    outline: 0;
+    border: 1px solid var(--textSecondaryColor);
+    box-shadow: 1px var(--textSecondaryColor);
+    transition: all 0.5s;
+    padding: 0 0 0 10px;
+  }
+  .todoList__search:focus {
+    outline: 0;
+    border: 1px solid var(--textSecondaryColor);
+    box-shadow: 1px var(--textSecondaryColor);
+    transition: all 0.5s;
+    padding: 0 0 0 10px;
+  }
+  .todoList__list {
+    width: 100%;
+    max-width: 840px;
+    max-height: 65rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
+  .todoList__item {
+    width: 95%;
+    max-width: 800px;
+    height: 100%;
+    min-height: 120px;
+    max-height: 140px;
+    margin: 7px 0;
+    background-color: var(--secondaryColor);
+    border-radius: 8px;
+    color: var(--textColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .item__title {
+    width: 300px;
+    height: 40px;
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin: 7px 0 0px 7px;
+  }
+  .item__description {
+    width: 340px;
+    height: 48px;
+    font-size: 2.1rem;
+    margin: 0px 0 0px 7px;
+  }
+  .item__date {
+    width: 120px;
+    height: 20px;
+    font-size: 1.3rem;
+    margin: auto 0 -30px 10px;
+    font-weight: 200;
+  }
+  .todoList__buttonBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 45px;
+    margin: auto -1rem 5px auto;
+  }
+  .todoList__edit {
+    width: 30px;
+    height: 30px;
+    font-size: 3.8rem;
+    color: var(--textColor);
+    background-color: var(--secondaryColor);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin: 0 30px 0 0;
+    cursor: pointer;
+    order: 1;
+  }
+  .todoList__check {
+    width: 30px;
+    height: 30px;
+    font-size: 2.8rem;
+    color: var(--textColor);
+    background-color: var(--secondaryColor);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin: 0 25px 0 0;
+    cursor: pointer;
+    order: 2;
+  }
+  .todoList__remove {
+    width: 30px;
+    height: 30px;
+    font-size: 2.8rem;
+    background-color: var(--secondaryColor);
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--highlightColor);
+    margin: 0 30px 0 0;
+    cursor: pointer;
+    order: 3;
+  }
+  .newItemBtn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--secondaryColor);
+    font-size: 4.6rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--textColor);
+  }
+  .newItemBtn__buttonBox {
+    width: 60px;
+    height: 60px;
+    margin: 20px 30px auto auto;
+  }
+  .newTask {
+    width: 100%;
+    max-width: 1023.98px;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--secondaryColor);
+    animation: fadeIn 0.7s linear;
+  }
+  .newTask__header {
+    width: 100%;
+    max-width: 960px;
+    height: 60px;
+    margin: 10px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--textColor);
+    font-size: 4.1rem;
+  }
+  .newTask__submit {
+    width: 45px;
+    height: 45px;
+    font-size: 4.1rem;
+    background-color: var(--secondaryColor);
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: var(--textColor);
+    align-items: center;
+  }
+  .newTask__title {
+    font-size: 3rem;
+    max-width: 900px;
+    height: 50px;
+    color: var(--textColor);
+    padding: 0 0 0 10px;
+    background-color: var(--secondaryColor);
+    /* background-color: black; */
+    border: none;
+    text-align: start;
+    line-height: 0;
+    overflow: hidden;
+  }
+  .newTask__title::placeholder,
+  .newTask__input::placeholder {
+    font-size: 3rem;
+    color: var(--textColor);
+    margin: 0 0 0 0px;
+    opacity: 0.7;
+  }
+  .newTask__title:focus,
+  .newTask__title:active {
+    outline: 0;
+    font-size: 3rem;
+    border: none;
+    overflow-wrap: break-word;
+    white-space: break-space;
+  }
+  .newTask__input {
+    background-color: var(--secondaryColor);
+    border: none;
+    width: 100%;
+    max-width: 940.98px;
+    font-size: 3rem;
+    padding: 0 0 40rem 10px;
+    color: var(--textColor);
+    text-align: start;
+    line-height: 0;
+    overflow: hidden;
+  }
+  .newTask__input:focus,
+  .newTask__input:active {
+    outline: 0;
+    font-size: 3rem;
+    border: none;
+    padding: 0 0 40rem 10px;
+    /* overflow-wrap: break-word;
+    white-space: break-space; */
+  }
+  .newTask__input::-ms-value {
+    margin: 0 0 auto 0;
+    color: red;
+  }
+  .newTaskForm {
+    width: 100%;
+    max-width: 980px;
+    background-color: var(--secondaryColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .fa-thumbtack {
+    margin: 0 -45rem 0 auto;
+  }
+
+  .fa-trash,
+  .fa-check-to-slot {
+    pointer-events: none;
+  }
+  .completed {
+    text-decoration: line-through 2px var(--primaryColor);
+    opacity: 0.5;
+  }
+
+  .item--buttons {
+    pointer-events: none;
+    width: 30px;
+    height: 30px;
+  }
+  .backdrop {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    backdrop-filter: blur(3px);
+  }
+  .editTask__mode {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1023.98px;
+    height: 100%;
+    position: absolute;
+    z-index: 9;
+  }
+  .editTask__modal {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    padding: 1rem;
+    width: 70%;
+    max-width: 40rem;
+    height: 20rem;
+    border: none;
+    background-color: var(--iconColor);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 2rem;
+    top: 50vh;
+    left: 10vh;
+    transform: translate(20%, -20%);
+    z-index: 20;
+    animation: comeUpModal 1s linear;
+  }
+  @keyframes comeUpModal {
+    0% {
+      transform: translateX(60%) scale(0.8);
+    }
+  }
+  .editTaskForm {
+    width: 100%;
+    max-width: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .taskTitle__edit {
+    width: 100%;
+    max-width: 50rem;
+    font-size: 2.5rem;
+    color: var(--textColor);
+    background-color: var(--iconColor);
+    border: none;
+  }
+  .taskInput__edit {
+    width: 100%;
+    max-width: 50rem;
+    padding: 0 0 10rem 2px;
+    font-size: 2.3rem;
+    color: var(--textColor);
+    background-color: var(--iconColor);
+    border: none;
+  }
+
+  .taskTitle__edit:focus,
+  .taskTitle__edit:active,
+  .taskInput__edit:focus,
+  .taskInput__edit:active {
+    outline: none;
+  }
+  .taskTitle__edit::placeholder,
+  .taskInput__edit::placeholder {
+    color: var(--textColor);
+    opacity: 0.5;
+  }
+  .editedTask__submit {
+    width: 100%;
+    max-width: 7rem;
+    height: 3rem;
+    margin: auto 0.5rem 0 auto;
+    border: none;
+    border-radius: 2rem;
+    background-color: var(--primaryColorLight);
+    color: var(--textColor);
+    font-size: 1.3rem;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  body {
+    background-image: var(--backgroundColor);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 54.45rem;
+    max-width: 1280px;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .welcome {
+    width: 100%;
+    max-width: 1279.98px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .welcome__title {
+    width: 260px;
+    height: auto;
+    font-weight: bold;
+    font-size: 6.5rem;
+    color: var(--textColor);
+    animation: fadeIn 2s linear;
+  }
+  .startMenu {
+    width: 100%;
+    max-width: 1279.98px;
+    height: 100vh;
+    color: var(--textColor);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeIn 2s linear;
+  }
+  .startMenu__title {
+    font-weight: bold;
+    font-size: 8rem;
+    margin: 80px 0 100px 0;
+  }
+  .startMenu__description {
+    width: 100%;
+    max-width: 520px;
+    font-size: 4rem;
+    margin: 0 0 120px 0;
+  }
+  .startMenu__button {
+    width: 417px;
+    height: 75px;
+    font-size: 2.9rem;
+    font-weight: 700;
+    border-radius: 12px;
+    margin: 0px 0 20px 0;
+    border: none;
+    color: var(--primaryColor);
+    background-color: var(--textColor);
+    cursor: pointer;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 25%;
+    }
+    50% {
+      opacity: 50%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+  @keyframes fadeOut {
+    0% {
+      opacity: 100%;
+    }
+    25% {
+      opacity: 75%;
+    }
+    50% {
+      opacity: 50%;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .todoList {
+    width: 100%;
+    max-width: 1279.98px;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--textColor);
+    margin: 10px 0;
+    animation: fadeIn 2s linear;
+  }
+  .todoList__header {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--textColor);
+    font-size: 5.5rem;
+    margin: 25px 0;
+  }
+  .todoList__title {
+    font-size: 4.5rem;
+  }
+  .todoList__sort {
+    width: 100%;
+    max-width: 420px;
+    height: 40px;
+    background-color: var(--inputBcg);
+    color: var(--primaryColor);
+    border: none;
+    border-radius: 20px;
+    appearance: none;
+    cursor: pointer;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0 0 0 auto;
+  }
+
+  .todoList__sort option {
+    background-color: var(--inputBcg);
+    color: var(--primaryColor);
+    width: 100px;
+    height: 70px;
+    border-radius: 20px;
+    font-size: 1.3rem;
+  }
+
+  .todoList__sort option:hover {
+    background-color: var(--iconColor);
+  }
+
+  .todoList__sort:focus,
+  .todoList__sort:active {
+    outline: 0;
+  }
+
+  .fa-ellipsis-vertical {
+    margin: 0 10px 0 auto;
+  }
+  .todoList__search {
+    width: 100%;
+    max-width: 1146px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--inputBcg);
+    margin: 30px 0 30px 0;
+    padding: 0 0 0 10px;
+    font-size: 2rem;
+    color: var(--primaryColor);
+  }
+  .todoList__search::placeholder {
+    font-size: 2rem;
+    color: var(--primaryColor);
+    outline: 0;
+    transition: all 0.5s;
+    padding: 0 0 0 15px;
+  }
+  .todoList__search:active {
+    outline: 0;
+    border: 1px solid var(--textSecondaryColor);
+    box-shadow: 1px var(--textSecondaryColor);
+    transition: all 0.5s;
+    padding: 0 0 0 10px;
+  }
+  .todoList__search:focus {
+    outline: 0;
+    border: 1px solid var(--textSecondaryColor);
+    box-shadow: 1px var(--textSecondaryColor);
+    transition: all 0.5s;
+    padding: 0 0 0 10px;
+  }
+  .todoList__list {
+    width: 100%;
+    max-width: 1270px;
+    max-height: 65rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    /* overflow-y: scroll; */
+  }
+  .todoList__item {
+    width: 100%;
+    max-width: 1090px;
+    height: 100%;
+    min-height: 140px;
+    max-height: 160px;
+    margin: 7px 0;
+    background-color: var(--secondaryColor);
+    border-radius: 8px;
+    color: var(--textColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .item__title {
+    width: 300px;
+    height: 40px;
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin: 7px 0 0px 7px;
+  }
+  .item__description {
+    width: 340px;
+    height: 48px;
+    font-size: 2rem;
+    margin: 0px 0 0px 7px;
+  }
+  .item__date {
+    width: 120px;
+    height: 20px;
+    font-size: 1.3rem;
+    margin: auto 0 -30px 10px;
+    font-weight: 200;
+  }
+  .todoList__buttonBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 35px;
+    margin: auto -2rem 5px auto;
+  }
+  .todoList__check {
+    width: 30px;
+    height: 30px;
+    font-size: 3.8rem;
+    color: var(--textColor);
+    background-color: var(--secondaryColor);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin: 0 25px 0 0;
+    cursor: pointer;
+    order: 2;
+  }
+  .todoList__remove {
+    order: 3;
+    width: 40px;
+    height: 40px;
+    font-size: 3.8rem;
+    background-color: var(--secondaryColor);
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--highlightColor);
+    margin: 0 30px 0 0;
+    cursor: pointer;
+  }
+  .todoList__edit {
+    width: 30px;
+    height: 30px;
+    font-size: 3.8rem;
+    color: var(--textColor);
+    background-color: var(--secondaryColor);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin: 0 30px 0 0;
+    cursor: pointer;
+    order: 1;
+  }
+  .item--buttons {
+    pointer-events: none;
+  }
+  .newItemBtn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--secondaryColor);
+    font-size: 4.6rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--textColor);
+  }
+
+  .newItemBtn__buttonBox {
+    width: 60px;
+    height: 60px;
+    margin: auto 30px 30px auto;
+    overflow-y: hidden;
+  }
+  .newTask {
+    width: 100%;
+    max-width: 1279.98px;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--secondaryColor);
+    animation: fadeIn 0.7s linear;
+  }
+  .newTask__header {
+    width: 100%;
+    max-width: 1200px;
+    height: 60px;
+    margin: 10px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--textColor);
+    font-size: 4.1rem;
+  }
+  .newTask__submit {
+    width: 45px;
+    height: 45px;
+    font-size: 5.5rem;
+    background-color: var(--secondaryColor);
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: var(--textColor);
+    align-items: center;
+  }
+  .newTask__title {
+    font-size: 3.5rem;
+    width: 940px;
+    height: 70px;
+    margin: 0 auto 0 0px;
+    padding: 0 0 0 15px;
+    color: var(--textColor);
+    background-color: var(--secondaryColor);
+    border: none;
+    text-align: start;
+    line-height: 0;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .newTask__title::placeholder,
+  .newTask__input::placeholder {
+    font-size: 3.5rem;
+    color: var(--textColor);
+    margin: 0 0 0 10px;
+    opacity: 0.7;
+  }
+  .newTask__title:focus,
+  .newTask__title:active {
+    outline: 0;
+    font-size: 3.5rem;
+    border: none;
+    margin: 0 0 0 0;
+    padding: 0 0 0 15px;
+    overflow-wrap: break-word;
+    white-space: break-space;
+  }
+  .newTask__input {
+    background-color: var(--secondaryColor);
+    border: none;
+    max-width: 1279.98px;
+    width: 100%;
+    font-size: 3rem;
+    padding: 0 0 36rem 15px;
+    color: var(--textColor);
+    text-align: start;
+    line-height: 0;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .newTask__input:focus,
+  .newTask__input:active {
+    outline: 0;
+    font-size: 3rem;
+    border: none;
+    padding: 0 0 36rem 15px;
+    overflow-wrap: break-word;
+    white-space: break-space;
+  }
+  .newTask__input::-ms-value {
+    margin: 0 0 auto 0;
+    color: red;
+  }
+  .newTaskForm {
+    width: 100%;
+    max-width: 1279.98px;
+    background-color: var(--secondaryColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .fa-thumbtack {
+    margin: 0 -95rem 0 auto;
+  }
+  .todoList--icons {
+    font-size: 3.5rem;
+  }
+  .fa-trash,
+  .fa-check-to-slot {
+    pointer-events: none;
+  }
+  .completed {
+    text-decoration: line-through 2px var(--primaryColor);
+    opacity: 0.5;
+  }
+  .backdrop {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    backdrop-filter: blur(3px);
+  }
+  .editTask__mode {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 9;
+  }
+  .editTask__modal {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    padding: 1rem;
+    width: 70%;
+    max-width: 50rem;
+    height: 20rem;
+    border: none;
+    background-color: var(--iconColor);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 2rem;
+    top: 50vh;
+    left: 50vh;
+    transform: translate(20%, -20%);
+    z-index: 20;
+    animation: comeUpModal 1s linear;
+  }
+  @keyframes comeUpModal {
+    0% {
+      transform: translateX(60%) scale(0.8);
+    }
+  }
+  .editTaskForm {
+    width: 100%;
+    max-width: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .taskTitle__edit {
+    width: 100%;
+    max-width: 50rem;
+    font-size: 2.5rem;
+    color: var(--textColor);
+    background-color: var(--iconColor);
+    border: none;
+  }
+  .taskInput__edit {
+    width: 100%;
+    max-width: 50rem;
+    padding: 0 0 10rem 2px;
+    font-size: 2.3rem;
+    color: var(--textColor);
+    background-color: var(--iconColor);
+    border: none;
+  }
+
+  .taskTitle__edit:focus,
+  .taskTitle__edit:active,
+  .taskInput__edit:focus,
+  .taskInput__edit:active {
+    outline: none;
+  }
+  .taskTitle__edit::placeholder,
+  .taskInput__edit::placeholder {
+    color: var(--textColor);
+    opacity: 0.5;
+  }
+  .editedTask__submit {
+    width: 100%;
+    max-width: 7rem;
+    height: 3rem;
+    margin: auto 0.5rem 0 auto;
+    border: none;
+    border-radius: 2rem;
+    background-color: var(--primaryColorLight);
+    color: var(--textColor);
+    font-size: 1.3rem;
+  }
+}
+@media screen and (min-width: 1281px) {
+  body {
+    background-image: var(--backgroundColor);
+    max-width: 5396px;
+    min-height: 59.9rem;
+    overflow-x: hidden;
+    background-color: var(--backgroundColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .welcome {
+    width: 100%;
+    max-width: 1440px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .welcome__title {
+    width: 260px;
+    height: auto;
+    font-weight: bold;
+    font-size: 6.5rem;
+    color: var(--textColor);
+    animation: fadeIn 2s linear;
+  }
+  .startMenu {
+    width: 100%;
+    max-width: 1440px;
+    height: 100vh;
+    color: var(--textColor);
+    display: none;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeIn 2s linear;
+  }
+  .startMenu__title {
+    font-weight: bold;
+    font-size: 8.5rem;
+    margin: 100px 0 100px 0;
+  }
+  .startMenu__description {
+    width: 100%;
+    max-width: 590px;
+    font-size: 4.5rem;
+    margin: 0 0 150px 0;
+  }
+  .startMenu__button {
+    width: 417px;
+    height: 75px;
+    font-size: 2.9rem;
+    font-weight: 700;
+    border-radius: 12px;
+    border: none;
+    color: var(--primaryColor);
+    background-color: var(--textColor);
+    cursor: pointer;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 25%;
+    }
+    50% {
+      opacity: 50%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+  @keyframes fadeOut {
+    0% {
+      opacity: 100%;
+    }
+    25% {
+      opacity: 75%;
+    }
+    50% {
+      opacity: 50%;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .todoList {
+    width: 100%;
+    max-width: 1440px;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--textColor);
+    margin: 10px 0;
+    animation: fadeIn 2s linear;
+    z-index: 0;
+  }
+  .todoList__header {
+    width: 100%;
+    max-width: 1300px;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--textColor);
+    font-size: 5.5rem;
+    margin: 25px 0;
+  }
+  .todoList__title {
+    font-size: 4.5rem;
+  }
+  .todoList__sort {
+    width: 100%;
+    max-width: 420px;
+    height: 40px;
+    background-color: var(--inputBcg);
+    color: var(--primaryColor);
+    border: none;
+    border-radius: 20px;
+    appearance: none;
+    cursor: pointer;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0 0 0 auto;
+  }
+
+  .todoList__sort option {
+    background-color: var(--inputBcg);
+    color: var(--primaryColor);
+    width: 100px;
+    height: 70px;
+    border-radius: 20px;
+    font-size: 1.3rem;
+  }
+
+  .todoList__sort option:hover {
+    background-color: var(--iconColor);
+  }
+
+  .todoList__sort:focus,
+  .todoList__sort:active {
+    outline: 0;
+  }
+
+  .fa-ellipsis-vertical {
+    margin: 0 10px 0 auto;
+  }
+  .todoList__search {
+    width: 100%;
+    max-width: 1246px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--inputBcg);
+    margin: 30px 0 30px 0;
+    padding: 0 0 0 10px;
+    font-size: 2rem;
+    color: var(--primaryColor);
+  }
+  .todoList__search::placeholder {
+    font-size: 2rem;
+    color: var(--primaryColor);
+    outline: 0;
+    transition: all 0.5s;
+    padding: 0 0 0 15px;
+  }
+  .todoList__search:active {
+    outline: 0;
+    border: 1px solid var(--textSecondaryColor);
+    box-shadow: 1px var(--textSecondaryColor);
+    transition: all 0.5s;
+    padding: 0 0 0 10px;
+  }
+  .todoList__search:focus {
+    outline: 0;
+    border: 1px solid var(--textSecondaryColor);
+    box-shadow: 1px var(--textSecondaryColor);
+    transition: all 0.5s;
+    padding: 0 0 0 10px;
+  }
+  .todoList__list {
+    width: 100%;
+    max-width: 1440px;
+    max-height: 65rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+  .todoList::-webkit-scrollbar,
+  .todoList__list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .todoList__item {
+    width: 100%;
+    max-width: 1110px;
+    height: 100%;
+    min-height: 140px;
+    max-height: 160px;
+    margin: 7px 0;
+    background-color: var(--secondaryColor);
+    border-radius: 8px;
+    color: var(--textColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 0;
+  }
+  .item__title {
+    width: 300px;
+    height: 40px;
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 7px 0 0px 7px;
+  }
+  .item__description {
+    width: 340px;
+    height: 48px;
+    font-size: 1.8rem;
+    margin: 0px 0 0px 7px;
+  }
+  .item__date {
+    width: 120px;
+    height: 20px;
+    font-size: 1.3rem;
+    margin: auto 0 -30px 10px;
+    font-weight: 200;
+  }
+  .todoList__buttonBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 35px;
+    margin: auto -1rem 5px auto;
+    overflow-y: hidden;
+  }
+  .todoList__check {
+    width: 30px;
+    height: 30px;
+    font-size: 3.8rem;
+    color: var(--textColor);
+    background-color: var(--secondaryColor);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin: 0 25px 0 0;
+    cursor: pointer;
+    order: 2;
+  }
+  .todoList__remove {
+    width: 40px;
+    height: 40px;
+    font-size: 3.8rem;
+    background-color: var(--secondaryColor);
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--highlightColor);
+    margin: 0 30px 0 0;
+    cursor: pointer;
+    order: 3;
+  }
+  .todoList__edit {
+    width: 30px;
+    height: 30px;
+    font-size: 3.8rem;
+    color: var(--textColor);
+    background-color: var(--secondaryColor);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin: 0 30px 0 0;
+    cursor: pointer;
+    order: 1;
+  }
+  .newItemBtn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--secondaryColor);
+    font-size: 4.6rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--textColor);
+  }
+  .newItemBtn__buttonBox {
+    width: 60px;
+    height: 60px;
+    margin: auto 40px 30px auto;
+    overflow-y: hidden;
+  }
+  .newTask {
+    width: 100%;
+    max-width: 1440px;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--secondaryColor);
+    animation: fadeIn 0.7s linear;
+  }
+  .newTask__header {
+    width: 100%;
+    max-width: 1350px;
+    height: 60px;
+    margin: 10px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--textColor);
+    font-size: 4.1rem;
+  }
+  .newTask__submit {
+    width: 45px;
+    height: 45px;
+    font-size: 5.5rem;
+    background-color: var(--secondaryColor);
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: var(--textColor);
+    align-items: center;
+  }
+  .newTask__title {
+    font-size: 3.5rem;
+    width: 940px;
+    height: 70px;
+    margin: 0 auto 0 0px;
+    padding: 0 0 0 15px;
+    color: var(--textColor);
+    background-color: var(--secondaryColor);
+    border: none;
+    text-align: start;
+    line-height: 0;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .newTask__title::placeholder,
+  .newTask__input::placeholder {
+    font-size: 3.5rem;
+    color: var(--textColor);
+    margin: 0 0 0 10px;
+    opacity: 0.7;
+  }
+  .newTask__title:focus,
+  .newTask__title:active {
+    outline: 0;
+    font-size: 3.5rem;
+    border: none;
+    padding: 0 0 0 15px;
+    overflow-wrap: break-word;
+    white-space: break-space;
+  }
+  .newTask__input {
+    background-color: var(--secondaryColor);
+    border: none;
+    width: 100%;
+    max-width: 1300px;
+    font-size: 3rem;
+    padding: 0 0 36rem 15px;
+    color: var(--textColor);
+    text-align: start;
+    line-height: 0;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .newTask__input:focus,
+  .newTask__input:active {
+    outline: 0;
+    font-size: 3rem;
+    border: none;
+    padding: 0 0 36rem 15px;
+    overflow-wrap: break-word;
+    white-space: break-space;
+  }
+
+  .newTaskForm {
+    width: 100%;
+    max-width: 1440.98px;
+    background-color: var(--secondaryColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .fa-thumbtack {
+    margin: 0 -95rem 0 auto;
+  }
+  .todoList--icons {
+    font-size: 3.5rem;
+  }
+  .item--buttons {
+    pointer-events: none;
+  }
+  .completed {
+    text-decoration: line-through 2px var(--primaryColor);
+    opacity: 0.5;
+  }
+  .backdrop {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    backdrop-filter: blur(3px);
+  }
+  .editTask__mode {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 9;
+  }
+  .editTask__modal {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    padding: 1rem;
+    width: 70%;
+    max-width: 50rem;
+    height: 20rem;
+    border: none;
+    background-color: var(--iconColor);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 2rem;
+    top: 50vh;
+    left: 50vh;
+    transform: translate(20%, -20%);
+    z-index: 20;
+    animation: comeUpModal 1s linear;
+  }
+  @keyframes comeUpModal {
+    0% {
+      transform: translateX(60%) scale(0.8);
+    }
+  }
+  .editTaskForm {
+    width: 100%;
+    max-width: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .taskTitle__edit {
+    width: 100%;
+    max-width: 50rem;
+    font-size: 2.5rem;
+    color: var(--textColor);
+    background-color: var(--iconColor);
+    border: none;
+  }
+  .taskInput__edit {
+    width: 100%;
+    max-width: 50rem;
+    padding: 0 0 10rem 2px;
+    font-size: 2.3rem;
+    color: var(--textColor);
+    background-color: var(--iconColor);
+    border: none;
+  }
+
+  .taskTitle__edit:focus,
+  .taskTitle__edit:active,
+  .taskInput__edit:focus,
+  .taskInput__edit:active {
+    outline: none;
+  }
+  .taskTitle__edit::placeholder,
+  .taskInput__edit::placeholder {
+    color: var(--textColor);
+    opacity: 0.5;
+  }
+  .editedTask__submit {
+    width: 100%;
+    max-width: 7rem;
+    height: 3rem;
+    margin: auto 0.5rem 0 auto;
+    border: none;
+    border-radius: 2rem;
+    background-color: var(--primaryColorLight);
+    color: var(--textColor);
+    font-size: 1.3rem;
   }
 }
