@@ -503,12 +503,6 @@
     opacity: 0.5;
   }
   .editedTask__submit {
-    width: 100%;
-    max-width: 7rem;
-    height: 3rem;
-    margin: auto 0.5rem 0 auto;
-    border: none;
-    border-radius: 2rem;
     background-color: var(--primaryColorLight);
     color: var(--textColor);
     font-size: 1.3rem;
@@ -533,13 +527,6 @@
   .startMenu__button:active,
   .startMenu__button:hover,
   .startMenu__button:focus {
-    width: 417px;
-    height: 75px;
-    font-size: 2.9rem;
-    font-weight: 700;
-    border-radius: 12px;
-    border: none;
-    color: var(--primaryColor);
     background-color: var(--secondaryColor);
     cursor: pointer;
     transition: all 0.5s ease-in-out;
@@ -1032,12 +1019,6 @@
     opacity: 0.5;
   }
   .editedTask__submit {
-    width: 100%;
-    max-width: 7rem;
-    height: 3rem;
-    margin: auto 0.5rem 0 auto;
-    border: none;
-    border-radius: 2rem;
     background-color: var(--primaryColorLight);
     color: var(--textColor);
     font-size: 1.3rem;
@@ -1062,13 +1043,6 @@
   .startMenu__button:active,
   .startMenu__button:hover,
   .startMenu__button:focus {
-    width: 417px;
-    height: 75px;
-    font-size: 2.9rem;
-    font-weight: 700;
-    border-radius: 12px;
-    border: none;
-    color: var(--primaryColor);
     background-color: var(--secondaryColor);
     cursor: pointer;
     transition: all 0.5s ease-in-out;
@@ -1663,12 +1637,6 @@
     opacity: 0.5;
   }
   .editedTask__submit {
-    width: 100%;
-    max-width: 7rem;
-    height: 3rem;
-    margin: auto 0.5rem 0 auto;
-    border: none;
-    border-radius: 2rem;
     background-color: var(--primaryColorLight);
     color: var(--textColor);
     font-size: 1.3rem;
@@ -1693,13 +1661,6 @@
   .startMenu__button:active,
   .startMenu__button:hover,
   .startMenu__button:focus {
-    width: 417px;
-    height: 75px;
-    font-size: 2.9rem;
-    font-weight: 700;
-    border-radius: 12px;
-    border: none;
-    color: var(--primaryColor);
     background-color: var(--secondaryColor);
     cursor: pointer;
     transition: all 0.5s ease-in-out;
@@ -2212,12 +2173,6 @@
     opacity: 0.5;
   }
   .editedTask__submit {
-    width: 100%;
-    max-width: 7rem;
-    height: 3rem;
-    margin: auto 0.5rem 0 auto;
-    border: none;
-    border-radius: 2rem;
     background-color: var(--primaryColorLight);
     color: var(--textColor);
     font-size: 1.3rem;
@@ -2242,13 +2197,6 @@
   .startMenu__button:active,
   .startMenu__button:hover,
   .startMenu__button:focus {
-    width: 417px;
-    height: 75px;
-    font-size: 2.9rem;
-    font-weight: 700;
-    border-radius: 12px;
-    border: none;
-    color: var(--primaryColor);
     background-color: var(--secondaryColor);
     cursor: pointer;
     transition: all 0.5s ease-in-out;
@@ -2768,12 +2716,6 @@
     opacity: 0.5;
   }
   .editedTask__submit {
-    width: 100%;
-    max-width: 7rem;
-    height: 3rem;
-    margin: auto 0.5rem 0 auto;
-    border: none;
-    border-radius: 2rem;
     background-color: var(--primaryColorLight);
     color: var(--textColor);
     font-size: 1.3rem;
@@ -2798,13 +2740,6 @@
   .startMenu__button:active,
   .startMenu__button:hover,
   .startMenu__button:focus {
-    width: 417px;
-    height: 75px;
-    font-size: 2.9rem;
-    font-weight: 700;
-    border-radius: 12px;
-    border: none;
-    color: var(--primaryColor);
     background-color: var(--secondaryColor);
     cursor: pointer;
     transition: all 0.5s ease-in-out;
