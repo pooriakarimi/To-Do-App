@@ -503,6 +503,12 @@
     opacity: 0.5;
   }
   .editedTask__submit {
+    width: 100%;
+    max-width: 7rem;
+    height: 3rem;
+    margin: auto 0.5rem 0 auto;
+    border: none;
+    border-radius: 2rem;
     background-color: var(--primaryColorLight);
     color: var(--textColor);
     font-size: 1.3rem;
@@ -517,7 +523,6 @@
     transition: all 0.2s ease;
     color: var(--primaryColorLight);
   }
-
   .todoList__sort:focus,
   .todoList__sort:active {
     outline: 0;
