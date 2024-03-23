@@ -514,26 +514,22 @@
   }
   .newItemBtn:active {
     background-color: var(--primaryColorLight);
-    transition: all ease 0.2s;
   }
   .todoList__check:active,
   .todoList__edit:active,
   .todoList__remove:active {
-    transition: all 0.2s ease;
     color: var(--primaryColorLight);
   }
   .todoList__sort:focus,
   .todoList__sort:active {
     outline: 0;
     background-color: var(--iconColor);
-    transition: all 0.2s ease-in-out;
   }
   .startMenu__button:active,
   .startMenu__button:hover,
   .startMenu__button:focus {
     background-color: var(--secondaryColor);
     cursor: pointer;
-    transition: all 0.5s ease-in-out;
     box-shadow: 1px 1px 10px var(--inputBcg);
   }
   .editedTask__submit:active {
@@ -542,7 +538,6 @@
   }
   .newTask__submit:active {
     color: var(--primaryColorLight);
-    transition: all ease 0.2s;
   }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {
@@ -1035,12 +1030,10 @@
   }
   .newItemBtn:active {
     background-color: var(--primaryColorLight);
-    transition: all ease 0.2s;
   }
   .todoList__check:active,
   .todoList__edit:active,
   .todoList__remove:active {
-    transition: all 0.2s ease;
     color: var(--primaryColorLight);
   }
 
@@ -1048,14 +1041,12 @@
   .todoList__sort:active {
     outline: 0;
     background-color: var(--iconColor);
-    transition: all 0.2s ease-in-out;
   }
   .startMenu__button:active,
   .startMenu__button:hover,
   .startMenu__button:focus {
     background-color: var(--secondaryColor);
     cursor: pointer;
-    transition: all 0.5s ease-in-out;
     box-shadow: 1px 1px 10px var(--inputBcg);
   }
   .editedTask__submit:active {
@@ -1064,7 +1055,6 @@
   }
   .newTask__submit:active {
     color: var(--primaryColorLight);
-    transition: all ease 0.2s;
   }
 }
 @media screen and (min-width: 481px) and (max-width: 720px) {
@@ -1648,12 +1638,10 @@
   }
   .newItemBtn:active {
     background-color: var(--primaryColorLight);
-    transition: all ease 0.2s;
   }
   .todoList__check:active,
   .todoList__edit:active,
   .todoList__remove:active {
-    transition: all 0.2s ease;
     color: var(--primaryColorLight);
   }
 
@@ -1661,14 +1649,12 @@
   .todoList__sort:active {
     outline: 0;
     background-color: var(--iconColor);
-    transition: all 0.2s ease-in-out;
   }
   .startMenu__button:active,
   .startMenu__button:hover,
   .startMenu__button:focus {
     background-color: var(--secondaryColor);
     cursor: pointer;
-    transition: all 0.5s ease-in-out;
     box-shadow: 1px 1px 10px var(--inputBcg);
   }
   .editedTask__submit:active {
@@ -1677,7 +1663,6 @@
   }
   .newTask__submit:active {
     color: var(--primaryColorLight);
-    transition: all ease 0.2s;
   }
 }
 @media screen and (min-width: 721px) and (max-width: 1024px) {
@@ -2191,12 +2176,10 @@
   }
   .newItemBtn:active {
     background-color: var(--primaryColorLight);
-    transition: all ease 0.2s;
   }
   .todoList__check:active,
   .todoList__edit:active,
   .todoList__remove:active {
-    transition: all 0.2s ease;
     color: var(--primaryColorLight);
   }
 
@@ -2204,14 +2187,12 @@
   .todoList__sort:active {
     outline: 0;
     background-color: var(--iconColor);
-    transition: all 0.2s ease-in-out;
   }
   .startMenu__button:active,
   .startMenu__button:hover,
   .startMenu__button:focus {
     background-color: var(--secondaryColor);
     cursor: pointer;
-    transition: all 0.5s ease-in-out;
     box-shadow: 1px 1px 10px var(--inputBcg);
   }
   .editedTask__submit:active {
@@ -2740,12 +2721,10 @@
   }
   .newItemBtn:active {
     background-color: var(--primaryColorLight);
-    transition: all ease 0.2s;
   }
   .todoList__check:active,
   .todoList__edit:active,
   .todoList__remove:active {
-    transition: all 0.2s ease;
     color: var(--primaryColorLight);
   }
 
@@ -2753,14 +2732,12 @@
   .todoList__sort:active {
     outline: 0;
     background-color: var(--iconColor);
-    transition: all 0.2s ease-in-out;
   }
   .startMenu__button:active,
   .startMenu__button:hover,
   .startMenu__button:focus {
     background-color: var(--secondaryColor);
     cursor: pointer;
-    transition: all 0.5s ease-in-out;
     box-shadow: 1px 1px 10px var(--inputBcg);
   }
   .editedTask__submit:active {
@@ -2769,7 +2746,6 @@
   }
   .newTask__submit:active {
     color: var(--primaryColorLight);
-    transition: all ease 0.2s;
   }
 }
 @media screen and (min-width: 1281px) {
