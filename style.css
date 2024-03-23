@@ -166,10 +166,6 @@
   .todoList__sort:active {
     outline: 0;
   }
-
-  .fa-ellipsis-vertical {
-    margin: 0 10px 0 auto;
-  }
   .todoList__search {
     width: 95%;
     max-width: 346px;
@@ -358,6 +354,7 @@
     justify-content: center;
     color: var(--textColor);
     align-items: center;
+    margin: 0 auto 0 0;
   }
   .newTask__title {
     font-size: 2rem;
@@ -408,9 +405,6 @@
     padding: 0 0 0 10px;
     overflow-wrap: break-word;
     white-space: break-space;
-  }
-  .fa-thumbtack {
-    margin: 0 -18rem 0 auto;
   }
   .fa-trash,
   .fa-check-to-slot {
@@ -520,7 +514,7 @@
     font-size: 1.3rem;
   }
 }
-@media screen and (min-width: 375px) and (max-width: 480px) {
+@media screen and (min-width: 376px) and (max-width: 480px) {
   body {
     background-image: var(--backgroundColor);
     width: 100%;
@@ -664,9 +658,6 @@
     outline: 0;
   }
 
-  .fa-ellipsis-vertical {
-    margin: 0 10px 0 auto;
-  }
   .todoList__search {
     width: 100%;
     max-width: 346px;
@@ -849,6 +840,7 @@
     justify-content: center;
     color: var(--textColor);
     align-items: center;
+    margin: 0 auto 0 0;
   }
   .newTask__title {
     font-size: 2.5rem;
@@ -902,11 +894,6 @@
     margin: 0 0 auto 0;
     color: red;
   }
-
-  .fa-thumbtack {
-    margin: 0 -18rem 0 auto;
-  }
-
   .fa-trash,
   .fa-check-to-slot {
     pointer-events: none;
@@ -1159,10 +1146,6 @@
   .todoList__sort:active {
     outline: 0;
   }
-
-  .fa-ellipsis-vertical {
-    margin: 0 10px 0 auto;
-  }
   .todoList__search {
     width: 95%;
     max-width: 646px;
@@ -1346,6 +1329,7 @@
     justify-content: center;
     color: var(--textColor);
     align-items: center;
+    margin: 0 auto 0 1rem;
   }
   .newTask__title {
     cursor: pointer;
@@ -1412,9 +1396,6 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-  }
-  .fa-thumbtack {
-    margin: 0 -25rem 0 auto;
   }
   .fa-trash,
   .fa-check-to-slot {
@@ -1756,9 +1737,6 @@
     outline: 0;
   }
 
-  .fa-ellipsis-vertical {
-    margin: 0 10px 0 auto;
-  }
   .todoList__search {
     width: 95%;
     max-width: 840px;
@@ -1943,6 +1921,7 @@
     justify-content: center;
     color: var(--textColor);
     align-items: center;
+    margin: 0 auto 0 1rem;
   }
   .newTask__title {
     font-size: 3rem;
@@ -2241,7 +2220,7 @@
   }
   .todoList__sort {
     width: 100%;
-    max-width: 420px;
+    max-width: 320px;
     height: 40px;
     background-color: var(--inputBcg);
     color: var(--primaryColor);
@@ -2251,7 +2230,7 @@
     cursor: pointer;
     font-size: 2rem;
     text-align: center;
-    margin: 0 0 0 auto;
+    margin: 0 2.5rem 0 auto;
   }
 
   .todoList__sort option {
@@ -2272,9 +2251,6 @@
     outline: 0;
   }
 
-  .fa-ellipsis-vertical {
-    margin: 0 10px 0 auto;
-  }
   .todoList__search {
     width: 100%;
     max-width: 1146px;
@@ -2461,9 +2437,10 @@
     border: none;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     color: var(--textColor);
     align-items: center;
+    margin: 0 auto 0 0;
   }
   .newTask__title {
     font-size: 3.5rem;
@@ -2532,9 +2509,6 @@
     align-items: flex-start;
   }
 
-  .fa-thumbtack {
-    margin: 0 -95rem 0 auto;
-  }
   .todoList--icons {
     font-size: 3.5rem;
   }
@@ -2760,7 +2734,7 @@
   }
   .todoList__sort {
     width: 100%;
-    max-width: 420px;
+    max-width: 320px;
     height: 40px;
     background-color: var(--inputBcg);
     color: var(--primaryColor);
@@ -2770,7 +2744,7 @@
     cursor: pointer;
     font-size: 2rem;
     text-align: center;
-    margin: 0 0 0 auto;
+    margin: 0 2.5rem 0 auto;
   }
 
   .todoList__sort option {
@@ -2789,10 +2763,6 @@
   .todoList__sort:focus,
   .todoList__sort:active {
     outline: 0;
-  }
-
-  .fa-ellipsis-vertical {
-    margin: 0 10px 0 auto;
   }
   .todoList__search {
     width: 100%;
@@ -2983,9 +2953,10 @@
     border: none;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     color: var(--textColor);
     align-items: center;
+    margin: 0 auto 0 1rem;
   }
   .newTask__title {
     font-size: 3.5rem;
@@ -3048,13 +3019,6 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-  }
-
-  .fa-thumbtack {
-    margin: 0 -95rem 0 auto;
-  }
-  .todoList--icons {
-    font-size: 3.5rem;
   }
   .item--buttons {
     pointer-events: none;
