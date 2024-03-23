@@ -161,7 +161,6 @@
   .todoList__sort option:hover {
     background-color: var(--iconColor);
   }
-
   .todoList__sort:focus,
   .todoList__sort:active {
     outline: 0;
@@ -513,6 +512,46 @@
     background-color: var(--primaryColorLight);
     color: var(--textColor);
     font-size: 1.3rem;
+  }
+  .newItemBtn:active {
+    background-color: var(--primaryColorLight);
+    transition: all ease 0.2s;
+  }
+  .todoList__check:active,
+  .todoList__edit:active,
+  .todoList__remove:active {
+    transition: all 0.2s ease;
+    color: var(--primaryColorLight);
+  }
+
+  .todoList__sort:focus,
+  .todoList__sort:active {
+    outline: 0;
+    background-color: var(--iconColor);
+    transition: all 0.2s ease-in-out;
+  }
+  .startMenu__button:active,
+  .startMenu__button:hover,
+  .startMenu__button:focus {
+    width: 417px;
+    height: 75px;
+    font-size: 2.9rem;
+    font-weight: 700;
+    border-radius: 12px;
+    border: none;
+    color: var(--primaryColor);
+    background-color: var(--secondaryColor);
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 1px 1px 10px var(--inputBcg);
+  }
+  .editedTask__submit:active {
+    background-color: var(--secondaryColor);
+    color: var(--primaryColor);
+  }
+  .newTask__submit:active {
+    color: var(--primaryColorLight);
+    transition: all ease 0.2s;
   }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {
@@ -1002,6 +1041,46 @@
     background-color: var(--primaryColorLight);
     color: var(--textColor);
     font-size: 1.3rem;
+  }
+  .newItemBtn:active {
+    background-color: var(--primaryColorLight);
+    transition: all ease 0.2s;
+  }
+  .todoList__check:active,
+  .todoList__edit:active,
+  .todoList__remove:active {
+    transition: all 0.2s ease;
+    color: var(--primaryColorLight);
+  }
+
+  .todoList__sort:focus,
+  .todoList__sort:active {
+    outline: 0;
+    background-color: var(--iconColor);
+    transition: all 0.2s ease-in-out;
+  }
+  .startMenu__button:active,
+  .startMenu__button:hover,
+  .startMenu__button:focus {
+    width: 417px;
+    height: 75px;
+    font-size: 2.9rem;
+    font-weight: 700;
+    border-radius: 12px;
+    border: none;
+    color: var(--primaryColor);
+    background-color: var(--secondaryColor);
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 1px 1px 10px var(--inputBcg);
+  }
+  .editedTask__submit:active {
+    background-color: var(--secondaryColor);
+    color: var(--primaryColor);
+  }
+  .newTask__submit:active {
+    color: var(--primaryColorLight);
+    transition: all ease 0.2s;
   }
 }
 @media screen and (min-width: 481px) and (max-width: 720px) {
@@ -1594,6 +1673,46 @@
     color: var(--textColor);
     font-size: 1.3rem;
   }
+  .newItemBtn:active {
+    background-color: var(--primaryColorLight);
+    transition: all ease 0.2s;
+  }
+  .todoList__check:active,
+  .todoList__edit:active,
+  .todoList__remove:active {
+    transition: all 0.2s ease;
+    color: var(--primaryColorLight);
+  }
+
+  .todoList__sort:focus,
+  .todoList__sort:active {
+    outline: 0;
+    background-color: var(--iconColor);
+    transition: all 0.2s ease-in-out;
+  }
+  .startMenu__button:active,
+  .startMenu__button:hover,
+  .startMenu__button:focus {
+    width: 417px;
+    height: 75px;
+    font-size: 2.9rem;
+    font-weight: 700;
+    border-radius: 12px;
+    border: none;
+    color: var(--primaryColor);
+    background-color: var(--secondaryColor);
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 1px 1px 10px var(--inputBcg);
+  }
+  .editedTask__submit:active {
+    background-color: var(--secondaryColor);
+    color: var(--primaryColor);
+  }
+  .newTask__submit:active {
+    color: var(--primaryColorLight);
+    transition: all ease 0.2s;
+  }
 }
 @media screen and (min-width: 721px) and (max-width: 1024px) {
   body {
@@ -2102,6 +2221,46 @@
     background-color: var(--primaryColorLight);
     color: var(--textColor);
     font-size: 1.3rem;
+  }
+  .newItemBtn:active {
+    background-color: var(--primaryColorLight);
+    transition: all ease 0.2s;
+  }
+  .todoList__check:active,
+  .todoList__edit:active,
+  .todoList__remove:active {
+    transition: all 0.2s ease;
+    color: var(--primaryColorLight);
+  }
+
+  .todoList__sort:focus,
+  .todoList__sort:active {
+    outline: 0;
+    background-color: var(--iconColor);
+    transition: all 0.2s ease-in-out;
+  }
+  .startMenu__button:active,
+  .startMenu__button:hover,
+  .startMenu__button:focus {
+    width: 417px;
+    height: 75px;
+    font-size: 2.9rem;
+    font-weight: 700;
+    border-radius: 12px;
+    border: none;
+    color: var(--primaryColor);
+    background-color: var(--secondaryColor);
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 1px 1px 10px var(--inputBcg);
+  }
+  .editedTask__submit:active {
+    background-color: var(--secondaryColor);
+    color: var(--primaryColor);
+  }
+  .newTask__submit:active {
+    color: var(--primaryColorLight);
+    transition: all ease 0.2s;
   }
 }
 @media screen and (min-width: 1025px) and (max-width: 1280px) {
@@ -2619,6 +2778,46 @@
     color: var(--textColor);
     font-size: 1.3rem;
   }
+  .newItemBtn:active {
+    background-color: var(--primaryColorLight);
+    transition: all ease 0.2s;
+  }
+  .todoList__check:active,
+  .todoList__edit:active,
+  .todoList__remove:active {
+    transition: all 0.2s ease;
+    color: var(--primaryColorLight);
+  }
+
+  .todoList__sort:focus,
+  .todoList__sort:active {
+    outline: 0;
+    background-color: var(--iconColor);
+    transition: all 0.2s ease-in-out;
+  }
+  .startMenu__button:active,
+  .startMenu__button:hover,
+  .startMenu__button:focus {
+    width: 417px;
+    height: 75px;
+    font-size: 2.9rem;
+    font-weight: 700;
+    border-radius: 12px;
+    border: none;
+    color: var(--primaryColor);
+    background-color: var(--secondaryColor);
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 1px 1px 10px var(--inputBcg);
+  }
+  .editedTask__submit:active {
+    background-color: var(--secondaryColor);
+    color: var(--primaryColor);
+  }
+  .newTask__submit:active {
+    color: var(--primaryColorLight);
+    transition: all ease 0.2s;
+  }
 }
 @media screen and (min-width: 1281px) {
   body {
@@ -2681,6 +2880,22 @@
     color: var(--primaryColor);
     background-color: var(--textColor);
     cursor: pointer;
+    transition: all 0.5s ease-in-out;
+  }
+  .startMenu__button:active,
+  .startMenu__button:hover,
+  .startMenu__button:focus {
+    width: 417px;
+    height: 75px;
+    font-size: 2.9rem;
+    font-weight: 700;
+    border-radius: 12px;
+    border: none;
+    color: var(--primaryColor);
+    background-color: var(--secondaryColor);
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 1px 1px 10px var(--inputBcg);
   }
   @keyframes fadeIn {
     0% {
@@ -2768,6 +2983,8 @@
   .todoList__sort:focus,
   .todoList__sort:active {
     outline: 0;
+    background-color: var(--iconColor);
+    transition: all 0.2s ease-in-out;
   }
   .todoList__search {
     width: 100%;
@@ -2878,6 +3095,12 @@
     cursor: pointer;
     order: 2;
   }
+  .todoList__check:active,
+  .todoList__edit:active,
+  .todoList__remove:active {
+    transition: all 0.2s ease;
+    color: var(--primaryColorLight);
+  }
   .todoList__remove {
     width: 40px;
     height: 40px;
@@ -2921,6 +3144,10 @@
     align-items: center;
     color: var(--textColor);
   }
+  .newItemBtn:active {
+    background-color: var(--primaryColorLight);
+    transition: all ease 0.2s;
+  }
   .newItemBtn__buttonBox {
     width: 60px;
     height: 60px;
@@ -2962,6 +3189,10 @@
     color: var(--textColor);
     align-items: center;
     margin: 0 auto 0 1rem;
+  }
+  .newTask__submit:active {
+    color: var(--primaryColorLight);
+    transition: all ease 0.2s;
   }
   .newTask__title {
     font-size: 3.5rem;
@@ -3125,5 +3356,9 @@
     background-color: var(--primaryColorLight);
     color: var(--textColor);
     font-size: 1.3rem;
+  }
+  .editedTask__submit:active {
+    background-color: var(--secondaryColor);
+    color: var(--primaryColor);
   }
 }
