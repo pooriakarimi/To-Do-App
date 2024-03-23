@@ -490,7 +490,6 @@
     background-color: var(--iconColor);
     border: none;
   }
-
   .taskTitle__edit:focus,
   .taskTitle__edit:active,
   .taskInput__edit:focus,
@@ -1024,6 +1023,12 @@
     opacity: 0.5;
   }
   .editedTask__submit {
+    width: 100%;
+    max-width: 7rem;
+    height: 3rem;
+    margin: auto 0.5rem 0 auto;
+    border: none;
+    border-radius: 2rem;
     background-color: var(--primaryColorLight);
     color: var(--textColor);
     font-size: 1.3rem;
@@ -1641,11 +1646,6 @@
     color: var(--textColor);
     opacity: 0.5;
   }
-  .editedTask__submit {
-    background-color: var(--primaryColorLight);
-    color: var(--textColor);
-    font-size: 1.3rem;
-  }
   .newItemBtn:active {
     background-color: var(--primaryColorLight);
     transition: all ease 0.2s;
@@ -2177,7 +2177,14 @@
     color: var(--textColor);
     opacity: 0.5;
   }
+
   .editedTask__submit {
+    width: 100%;
+    max-width: 7rem;
+    height: 3rem;
+    margin: auto 0.5rem 0 auto;
+    border: none;
+    border-radius: 2rem;
     background-color: var(--primaryColorLight);
     color: var(--textColor);
     font-size: 1.3rem;
@@ -2721,6 +2728,12 @@
     opacity: 0.5;
   }
   .editedTask__submit {
+    width: 100%;
+    max-width: 7rem;
+    height: 3rem;
+    margin: auto 0.5rem 0 auto;
+    border: none;
+    border-radius: 2rem;
     background-color: var(--primaryColorLight);
     color: var(--textColor);
     font-size: 1.3rem;
